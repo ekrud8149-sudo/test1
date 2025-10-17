@@ -2,10 +2,17 @@
 
 int main(void)
 {
-    int a;
-    scanf("%d", &a);
-    printf("입력된 값 : %d\n", a);
 
+    char grade;
+    char name[20];
+
+    printf("학점 입력 : ");
+    scanf("%c", &grade);
+
+    printf("이름입력: ");
+    scanf("%s", name);
+    printf("%s의 학점은 %c입니다.\n", name, grade);
 
     return 0;
+
 }
