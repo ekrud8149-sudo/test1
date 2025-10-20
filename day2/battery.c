@@ -9,11 +9,11 @@ int main(void)
     printf("-------사전 선정 정보-------\n");
 
     float t, d, E, R = 0.1, eta = 0.95, I_load = 8, vel = 6.4, p;
-    int C = 80, V = 48;
+    int C = 80, V = 48, n = 2;
     
     E = V * C * eta * (1-R);
 
-    p = (V * I_load) / eta;
+    p = (V * I_load) * n / eta;
 
     t = E / p;
 
@@ -28,3 +28,6 @@ int main(void)
     
 
 }
+
+
+
