@@ -144,7 +144,6 @@
  출력 : 최솟값(거리)과 해당각도(인덱스)
  조건 : for문과 if문만을 사용. 함수금지*/
 
-
 // int main(void)
 // {
 //     double dist[360];
@@ -152,51 +151,62 @@
 //     double min_value;
 
 //     printf("360도 라이다 거리값 입력\n");
-//     for (i = 0; i < 10; i++); {
+//     for (i = 0; i < 10; i++) {
 //         printf("%3d도 거리(cm): ", i);
 //         scanf("%lf", &dist[i]);
 
 //     }
 //     min_value = dist[0];
-//     for (i = 1; i < 10; i++){
+//     for (i = 1; i < 10; i++) {
 //         if (dist[i]< min_value){
 //             min_value = dist[i];
-//             min_value = i;
+//             min_index = i;
 
 //         }
 //     }
 //     printf("\n라이다 최소 거리 탐색 결과\n");
 //     printf("가장 가까운 거리: %.1f cm\n", min_value);
-//     printf("장애물 방향:%d\n", min_index);
+//     printf("장애물 방향:%d도\n", min_index);
 
 //     return 0;
 
 // }
 
+
+//최소 거리 값 3개
+#include <stdio.h>  
+
 int main(void)
 {
-    double dist[360];
-    int i, min_index = 0;
-    double min_value;
+    double dist[10];
+    int i;
+    double min1 = 999999, min2 = 999999, min3 = 999999;
+    int idx1 = -1, idx2 = -1, idx3 = -1;
 
-    printf("360도 라이다 거리값 입력\n");
-    for (i = 0; i < 10; i++); {
+    printf("10개의 라이다 거리값 입력\n");
+    for (i = 0; i < 10; i++) {
         printf("%3d도 거리(cm): ", i);
         scanf("%lf", &dist[i]);
+    } 
 
-    }
-    min_value = dist[0];
-    for (i = 1; i < 10; i++){
-        if (dist[i]< min_value){
-            min_value = dist[i];
-            min_value = i;
-
+    for (i = 0; i < 10; i++) {
+        if (dist[i] < min1) {                     // 1순위 갱신
+            min3 = min2; idx3 = idx2;
+            min2 = min1; idx2 = idx1;
+            min1 = dist[i]; idx1 = i;
+        } else if (dist[i] < min2) {              // 2순위 갱신
+            min3 = min2; idx3 = idx2;
+            min2 = dist[i]; idx2 = i;
+        } else if (dist[i] < min3) {              // 3순위 갱신
+            min3 = dist[i]; idx3 = i;
         }
     }
-    printf("\n라이다 최소 거리 탐색 결과\n");
-    printf("가장 가까운 거리: %.1f cm\n", min_value);
-    printf("장애물 방향:%d\n", min_index);
+
+    printf("\n가장 가까운 거리 TOP 3\n");
+    printf("1: %.1f cm (방향 %d도)\n", min1, idx1);
+    printf("2: %.1f cm (방향 %d도)\n", min2, idx2);
+    printf("3: %.1f cm (방향 %d도)\n", min3, idx3);
 
     return 0;
-
 }
+
