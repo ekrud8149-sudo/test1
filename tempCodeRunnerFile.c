@@ -1,37 +1,26 @@
+#include <stdio.h>
 
-int main(void)
-{   
-    int i;
-    int speed[500];
-    int accel = 0, brake = 0;
-    int delta;
+// int main(void)
+// {
+//     char ch;
+//     int in;
+//     double db;
 
-    srand(time(NULL));
+//     char *pc = &ch;
+//     int *pi = &in;
+//     double *pd = &db;
 
-    for (i = 0; i < 500; i++)
-    {
-        speed[i] = rand() % 100 +1;
-    }
+//     printf("char형 변수의 주소 크기 : %d\n", sizeof(&ch));
+//     printf("int형 변수의 주소 크기 : %d\n", sizeof(&in));
+//     printf("double형 변수의 주소 크기 : %d\n", sizeof(&db));
 
-    for (i = 0; i < 500; i++)
-    {
-        printf("\n주행 데이터 : %3d", speed[i]);
-        if ((i + 1) % 20 == 0) printf("\n");
-    }
+//     printf("char * 포인터의 크기 : %d\n", sizeof(pc));
+//     printf("int * 포인터의 크기 : %d\n", sizeof(pi));
+//     printf("double * 포인터의 크기 : %d\n", sizeof(pd));
 
-    for (i = 1; i < 500; i++)
-    {   
-        delta = speed[i] - speed[i-1];
-        if (delta >= 10){
-            accel++; 
-        } else if (delta <= -10) {
-            brake++;           
-        }
-    }
+//     printf("char * 포인터가 가리키는 변수의 크기 : %d\n", sizeof(*pc));
+//     printf("int * 포인터가 가리키는 변수의 크기 : %d\n", sizeof(*pi));
+//     printf("double * 포인터가 가리키는 변수의 크기 : %d\n", sizeof(*pd));
 
-    printf("급가속 횟수:%d\n", accel);
-    printf("급제동 횟수:%d\n", brake);
-
-    return 0;
-
-}
+//     return 0;
+// }

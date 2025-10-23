@@ -172,7 +172,7 @@
 
 //     // 두 번째부터는 이전 값 기준 ±10 범위 내에서 생성
 //     for (i = 1; i < 10; i++) {
-//         int change = rand() % 20 - 10; // -10 ~ +10 -9~9
+//         int change =  rand() % 20 - 10; // -10 ~ +10 -9~9
 //         speed[i] = speed[i - 1] + change;
 
 //         // 속도가 1~100 범위를 벗어나지 않게 조정
@@ -193,31 +193,28 @@
 
 
 
-int main(void){
-    int i;
-    int charge[100];
-    int warning = 0;
+// int main(void){
+//     int i;
+//     int charge[100];
+//     int warning = 0;
     
-    for (i = 0; i < 10; i++) {
-         printf("%d번째배터리 잔량 입력:", i + 1); 
-         scanf("%d", &charge[i]); //배터리 잔량 입력받기
-     } //i = 10인 상태로 for문 끝남
+//     for (i = 0; i < 10; i++) {
+//          printf("%d번째배터리 잔량 입력:", i + 1); 
+//          scanf("%d", &charge[i]); //배터리 잔량 입력받기
+//      } //i = 10인 상태로 for문 끝남
     
-    for (i = 0; i < 10; i++){ //for문에서 조건 실행
-        if (charge[i] <= 30){
-            warning = 1;
-        }
+//     for (i = 0; i < 10; i++){ //for문에서 조건 실행
+//         if (charge[i] <= 30){
+//             warning = 1;
+//         }
 
-        else if (warning = 1 && charge[i] >= 35){
-            warning = 0; //스위치 off
-        }
+//         else if (warning = 1 && charge[i] >= 35){
+//             warning = 0; //스위치 off
+//         }
 
-        printf("%2d번째 잔량: %3d%%  →  경고 스위치: %s\n",
-               i + 1, charge[i],
-               (warning == 1 ? "ON" : "OFF"));
-        }
-    return 0;
-}
-
-
-
+//         printf("%2d번째 잔량: %3d%%  →  경고 스위치: %s\n",
+//                i + 1, charge[i],
+//                (warning == 1 ? "ON" : "OFF"));
+//         }
+//     return 0;
+// }
