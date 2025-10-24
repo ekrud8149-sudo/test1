@@ -1,9 +1,9 @@
-/*
-포인터는 메모리의 주소를 저장하는 변수
-포인터는 변수의 시작 주소를 저장한다.
+// /*
+// 포인터는 메모리의 주소를 저장하는 변수
+// 포인터는 변수의 시작 주소를 저장한다.
 
 
-*/
+// */
 
 
 #include <stdio.h>
@@ -72,7 +72,7 @@ int main(){
     return 0;
 }
 
-주소와 포인터의 크기
+// //주소와 포인터의 크기
 
 #include <stdio.h>
 
@@ -101,8 +101,8 @@ int main(void)
     return 0;
 }
 
-//정수 a를 선언하고 초기값 10을 저장한 뒤, 포인터를 이용해 변수 a의 값을 20으로 변경해보시오
-//또한 포인터 사용 전후의 출력 결과를 비교하시오
+// //정수 a를 선언하고 초기값 10을 저장한 뒤, 포인터를 이용해 변수 a의 값을 20으로 변경해보시오
+// //또한 포인터 사용 전후의 출력 결과를 비교하시오
 
 #include <stdio.h>
 int main(void){
@@ -117,4 +117,84 @@ int main(void){
 
     printf("변경후: a = %d\n", a);
     return 0;
+}
+
+
+/*포인터 대입 규칙 -서로 다른 타입의 포인터를 암시적으로 대입할 수 없음 */
+
+#include <stdio.h>
+int main(void){
+    int a  =10;
+    int *p = &a;
+    double *pd;  //이거 안됨
+
+    pd = p; // 서로 다른 타입의 포인터를 암시적으로 대입할 수 없음
+     printf("%d\n", *pd);
+
+    return 0;
+}
+
+해결 1
+#include <stdio.h>
+int main(void){
+    int a  =10;
+    int *p = &a;
+    int *pd; //int로 바꿔준다
+
+    pd = p; // 자료형이 같아야한다.
+     printf("%d\n", *pd);
+
+    return 0;
+}
+
+//해결 2 - 형변환 연산자
+int main(void){
+    int a  =10;
+    int *p = &a;
+    double *pd; 
+
+    pd = p;
+    printf("%d\n", *(int *)pd); 
+    return 0;
+}
+
+/* 포인터를 사용한 두 변수 값 교환 swap*/ 
+void swap(int *pa, int *pb);
+
+int main(void){
+    int a= 10, b = 20;
+
+    swap(&a, &b);
+    printf("a:%d, b:%d\n", a, b);
+
+    return 0;
+}
+
+void swap(int *pa, int*pb)
+{
+    int temp;
+
+    temp = *pa;
+    *pa = *pb;
+    *pb = temp;
+}
+
+//????
+void swap(*pa, *pb);
+
+int main(void){
+    int a = 10, b = 20;
+
+    swap(&a, &b);
+    printf("a:%d, b:%d\n", a, b);
+
+    return 0;
+}
+
+void swap(*pa, *pb){
+    int temp;
+      
+    temp = *a;
+    *a = b;
+    b = temp;
 }
