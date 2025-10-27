@@ -1,10 +1,28 @@
+void my_gets(char *str, int size);
 
-void print_ary(int *pa, int size)
+int main(void)
 {
-    int i;
+    char str[7];
 
-    for (i = 0; i < size; i++)
+    my_gets(str, sizeof(str));
+    printf("입력한 문자열: %s\n", str);
+
+    return 0;
+}
+
+void my_gets(char *str, int size)
+{
+    int ch;
+    int i = 0;
+
+    ch = getchar();
+    while ((ch != '\n') && (i < size -1))
+
     {
-        printf("%d  ", pa[i]);
+        str[i] = ch;
+        i++;
+        ch = getchar();
     }
+    str[i] = '\0';
+    
 }
