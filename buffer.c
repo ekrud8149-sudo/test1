@@ -3,91 +3,91 @@
  /*getcnar 함수를 사용한 문자열 입력*/
 // void my_gets(char *str, int size);
 
-// int main(void)
-// {
-//     char str[7];
+int main(void)
+{
+    char str[7];
 
-//     my_gets(str, sizeof(str));
-//     printf("입력한 문자열: %s\n", str);
+    my_gets(str, sizeof(str));
+    printf("입력한 문자열: %s\n", str);
 
-//     return 0;
-// }
+    return 0;
+}
 
-// void my_gets(char *str, int size)
-// {
-//     int ch;
-//     int i = 0;
+void my_gets(char *str, int size)
+{
+    int ch;
+    int i = 0;
 
-//     ch = getchar();
-//     while ((ch != '\n') && (i < size -1))
+    ch = getchar();
+    while ((ch != '\n') && (i < size -1))
 
-//     {
-//         str[i] = ch;
-//         i++;
-//         ch = getchar();
-//     }
-//     str[i] = '\0';
+    {
+        str[i] = ch;
+        i++;
+        ch = getchar();
+    }
+    str[i] = '\0';
     
-// }
+}
 
 /*11-7.c 입력 버퍼 지우기*/
-// int main(void)
-// {
-//     int num, grade;
+int main(void)
+{
+    int num, grade;
 
-//     printf("학번입력: ");
-//     scanf("%d", &num);
-//     getchar();
-//     printf("학점 입력: ");
-//     grade = getchar();
-//     printf("학번 :%d, 학점 :%c", num, grade);
+    printf("학번입력: ");
+    scanf("%d", &num);
+    getchar();
+    printf("학점 입력: ");
+    grade = getchar();
+    printf("학번 :%d, 학점 :%c", num, grade);
 
-//     return 0;
-// }
+    return 0;
+}
 
 // /*scanf 함수를 사용한 문자열 입력 - 공백 안받아줌*/ 
 
-// int main(void)
-// {
-//     char str[80];
+int main(void)
+{
+    char str[80];
 
-//     printf("문자열 입력: ");
-//     scanf("%s", str);
-//     printf("첫 번째 단어 :%s\n",str);
-//     scanf("%s",str);
-//     printf("버퍼에 남아있는 두 번째 단어: %s\n", str);
+    printf("문자열 입력: ");
+    scanf("%s", str);
+    printf("첫 번째 단어 :%s\n",str);
+    scanf("%s",str);
+    printf("버퍼에 남아있는 두 번째 단어: %s\n", str);
 
-//     return 0;
-// }
+    return 0;
+}
 
 
 /*gests함수를 사용한 문자열입력 - 공백 받아줌*/
-// int main(void)
-// {
-//     char str[80];
+int main(void)
+{
+    char str[80];
 
-//     printf("공백을 포함한 문자열 입력: ");
-//     gets(str);
-//     printf("입력한 문자열은 %s입니다.", str);
+    printf("공백을 포함한 문자열 입력: ");
+    gets(str);
+    printf("입력한 문자열은 %s입니다.", str);
 
-//     return 0;
-// }
+    return 0;
+}
 
 
 //배열명은 주소값과 같다
 
 /*fgets 함수 : 어디까지 읽을지 결정가능*/
-// int main()
-// {
-//     char str[80];
+int main()
+{
+    char str[80];
 
-//     printf("공백이 포함된 문자열 입력 :");
-//     fgets(str, sizeof(str), stdin);
+    printf("공백이 포함된 문자열 입력 :");
+    fgets(str, sizeof(str), stdin);
 
-//     printf("입력된 문자열은 %s입니다\n", str);
+    printf("입력된 문자열은 %s입니다\n", str);
 
-//     return 0;
-// }
+    return 0;
+}
 
 
 /*지역변수, 전역변수*/
@@ -97,63 +97,63 @@
             같은 이름의 지역 변수에 의해 사용 범위가 제한된다.*/
 
 
-// void assign10(void);
-// void assign20(void);
+void assign10(void);
+void assign20(void);
 
-// int a; //전역변수 바깥에 있으면 자동 초기화 = 0
+int a; //전역변수 바깥에 있으면 자동 초기화 = 0
 
-// int main(void)
-// {
-//     printf("함수 호출 전 a값 : %d\n", a);
+int main(void)
+{
+    printf("함수 호출 전 a값 : %d\n", a);
 
-//     assign10();
-//     assign20();
+    assign10();
+    assign20();
 
-//     printf("함수 호출 후 a값 : %d\n", a);
+    printf("함수 호출 후 a값 : %d\n", a);
 
-//     return 0;
-// }
+    return 0;
+}
 
-// void assign10(void)
-// {
-//     a = 10;
-// }
+void assign10(void)
+{
+    a = 10;
+}
 
-// void assign20(void)
-// {
-//     int a;
+void assign20(void)
+{
+    int a;
 
-//     a = 20;
-// }
+    a = 20;
+}
 
 /*14장 다차원 배열, 포인터 배열*/
 
-// int main()
-// { 
-//     int score[2][3][4] = {
-//         {{72, 80, 90, 60}, {68, 98, 83, 90}, {75, 72, 84, 90}},
-//         {{66, 85, 90, 88}, {95, 92, 88, 95}, {43, 72, 56, 75}}
-//         };
+int main()
+{ 
+    int score[2][3][4] = {
+        {{72, 80, 90, 60}, {68, 98, 83, 90}, {75, 72, 84, 90}},
+        {{66, 85, 90, 88}, {95, 92, 88, 95}, {43, 72, 56, 75}}
+        };
 
-//     int i, j, k;
+    int i, j, k;
 
 
-//     for (i = 0; i <2; i++)
-//     {
-//         printf("%d반 점수..\n", i+1);
-//         for(j =0; j < 3; j++)
-//         {
-//             for(k = 0; k < 4; k++)
-//             {
-//                 printf("%5d", score[i][j][k]);
-//             }
-//             printf("\n");
-//         }
-//         printf("\n");
+    for (i = 0; i <2; i++)
+    {
+        printf("%d반 점수..\n", i+1);
+        for(j =0; j < 3; j++)
+        {
+            for(k = 0; k < 4; k++)
+            {
+                printf("%5d", score[i][j][k]);
+            }
+            printf("\n");
+        }
+        printf("\n");
     
-//     }
-//     return 0;
-// }
+    }
+    return 0;
+}
 
 int main()
 {   
