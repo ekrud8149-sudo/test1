@@ -1,0 +1,15 @@
+START TIME		DURATION	STATE	ENERGY CHANGE	CHANGE RATE	% LOW POWER STATE TIME	% CAPACITY REMAINING AT START
+2025-10-27 09:12:37	4:32:27		Active	-	-	-	-
+13:45:04		0:17:45		Sleep (Hybrid)	-	-	-	-
+14:02:50		2:55:03		Active	-	-	-	-
+16:57:54		16:14:02	Shutdown (Hybrid)	-	-	-	-
+2025-10-28 09:11:56	4:19:14		Active	-	-	-	-
+13:31:11		0:30:14		Sleep (Hybrid)	-	-	-	-
+14:01:26		3:11:04		Active	-	-	-	-
+17:12:30		15:56:12	Shutdown (Hybrid)	-	-	-	-
+2025-10-29 09:08:43	4:22:12		Active	-	-	-	-
+13:30:55		0:31:25		Sleep (Hybrid)	-	-	-	-
+14:02:21		0:03:43		Active	-	-	-	-
+14:06:04		0:00:11		Shutdown	-	-	-	-
+14:06:16		1:09:28		Active	-	-	-	-
+15:15:45		0:00:00		Report Generated	-	-	-	
